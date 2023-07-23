@@ -1,7 +1,7 @@
 const PORT = process.env.PORT || 8001;
 const ENV = require("./environment");
 
-const app = require("./application")(ENV, { updateAppointment });
+const app = require("./application.js")(ENV, { updateAppointment });
 const server = require("http").Server(app);
 
 const WebSocket = require("ws");
@@ -30,7 +30,7 @@ function updateAppointment(id, interview) {
     }
   });
 }
-
+const MyComponent = require("./myComponent");
 server.listen(PORT, () => {
   console.log(`Listening on port ${PORT} in ${ENV} mode.`);
 });
